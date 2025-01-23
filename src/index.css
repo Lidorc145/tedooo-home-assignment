@@ -1,13 +1,158 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #f6f7f7!important;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #F7FCFB;
+  background-color: #f6f7f7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+.card{
+  background: white;
+  border-radius: 4px;
+  padding: 0!important;
+
+  .premium-tag-container{
+    display: flex;
+    background: black;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    img{
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+  }
+  .feed-conetnt {
+    p{
+      margin-bottom: 0;
+    }
+    p.username{
+      font-family: "DM Sans", serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    p.shopName{
+      font-family: "DM Sans", serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0A66C2;
+      cursor: pointer;
+    }
+    p.dot{
+      font-family: "DM Sans", serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #949796;
+      margin: 0 5px;
+    }
+    p.date{
+      font-family: "DM Sans", serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #949796;
+    }
+    .user-image {
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+    text-align: left;
+    padding: 24px;
+
+    .feed-text-content{
+      font-family: "DM Sans", serif;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 16px;
+    }
+  }
+
+  .grid-container{
+    margin: 0;
+    padding: 0;
+
+    div.border{
+      border: none;
+      border-radius: 0;
+
+    }
+
+    @media only screen and (min-width: 767px) {
+      .height-one{
+        padding: 25%;
+
+      }
+      .height-two{
+        padding: 15%;
+      }
+    }
+  }
+
+  .spacer{
+    width: 95%;
+    height: 1px;
+    background: #E9EAEA;
+    margin: auto;
+  }
+  .post-interactions{
+    color: #737877;
+    font-family: "DM Sans", serif;
+    font-size: 14px;
+    padding: 0 15px;
+    .likes, .comments{
+      cursor: pointer;
+    }
+  }
+  .controllers{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    height: 40px;
+    font-family: "DM Sans", serif;
+    font-size: 14px;
+
+    .like-button:hover, .comment-button:hover{
+      color: #0A66C2;
+      cursor: pointer;
+    }
+    .didLike {
+      color: #0A66C2;
+    }
+  }
+}
+header{
+  margin: 0 10px;
+}
+
+header.px-6{
+  padding-left: 0;
+  padding-right: 0;
 }
 
 a {
@@ -21,8 +166,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
