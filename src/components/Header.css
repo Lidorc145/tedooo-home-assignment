@@ -22,7 +22,8 @@ label.search-label:before {
     padding: 5px 5px 8px 40px;
     margin-top: 5px;
     @media only screen and (max-width: 767px) {
-        width: calc(100vw - 150px);
+        width: calc(100vw - 8.5em);
+        flex-grow: 1;
     }
 }
 
