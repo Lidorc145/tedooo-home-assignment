@@ -40,7 +40,7 @@ export const postsSlice = createSlice({
             const itemId = state.posts[index].id;
             if(!state.posts[index].impressionSent) {
                 state.posts[index].impressionSent=true;
-                fetch(`${API_BASE_URL}/Impression/?itemId=${itemId}`,{
+                fetch(`https://backend.tedooo.com/?itemId=${itemId}`,{
                     method: 'GET',
                     mode: 'no-cors',
                     cache: 'no-cache'

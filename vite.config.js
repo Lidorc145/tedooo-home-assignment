@@ -10,11 +10,6 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       proxy: {
-        '/Impression': {
-          target: 'https://backend.tedooo.com',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/Impression/, ''),
-        },
         '/hw': {
           target: 'https://backend.tedooo.com',
           changeOrigin: true,

@@ -119,23 +119,3 @@ function formatTime(date) {
 
     return difference;
 }
-
-function trackImpression(itemId) {
-    const impressionSent = localStorage.getItem(`impression_sent_${itemId}`);
-
-    if (!impressionSent) {
-    fetch(`${API_BASE_URL}/Impression/?itemId=${itemId}`,{
-        method: 'GET',
-        mode: 'no-cors',
-        cache: 'no-cache'
-    })
-        .then(response => {
-            if (response.ok) {
-                localStorage.setItem(`impression_sent_${itemId}`, 'true');
-            } else {
-                console.error("Failed to send impression.");
-            }
-        })
-        .catch(error => console.error("Error:", error));
-    }
-}
