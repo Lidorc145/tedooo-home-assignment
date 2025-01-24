@@ -6,69 +6,76 @@ label.search-label:before {
     content: "";
     position: absolute;
     left: 15px;
-    top: 0;
+    top: 5px;
     bottom: 0;
     width: 20px;
     background: url("../assets/icon_search.svg") center / contain no-repeat;
 
 }
 
-.header-search-box{
+.header-search-box {
     height: 40px;
     width: 216px;
     color: #949796;
     background: #f4f5f5;
     border-radius: 20px;
-    padding: 5px 5px 8px 40px;
+    padding: 10px 5px 8px 40px;
     margin-top: 5px;
+    font-family: "DM Sans", serif;
+    font-size: 14px;
+    font-weight: 400;
     @media only screen and (max-width: 767px) {
         width: calc(100vw - 8.5em);
         flex-grow: 1;
     }
 }
 
-
-
-nav{
-    box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+nav {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .1);
     background: white;
-    --navbar-height: 58px!important;
-    .header-menu-items{
+    --navbar-height: 58px !important;
+
+    .header-menu-items {
         display: flex;
         @media only screen and (max-width: 767px) {
             display: none;
         }
     }
-    ul{
+
+    ul {
         margin-bottom: 0;
     }
+
     li > a {
-        padding: 15px 10px 10px 0;
+        padding: 15px 15px 10px 0;
         height: 100%;
         font-family: "Poppins", serif;
+        font-size: 16px;
         font-weight: 400;
         font-style: normal;
         color: #949796;
         border-bottom: 2px solid transparent;
-        &.selected{
+
+        &.selected {
             font-weight: 500;
-            color:#2db8a1;
+            color: #2db8a1;
             stroke-linecap: round;
             border-bottom: 2px solid #2db8a1;
-            img{
+
+            img {
                 filter: sepia(1) hue-rotate(-250deg);
             }
         }
-        &:hover{
+
+        &:hover {
             color: #7dbdb2;
-            stroke-linecap: round;
             border-bottom: 2px solid #7dbdb2;
-            img{
+            text-decoration: none;
+
+            img {
                 filter: sepia(1) hue-rotate(-250deg);
             }
-
         }
-
     }
 
     .user-image {

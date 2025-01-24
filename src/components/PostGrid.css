@@ -1,0 +1,164 @@
+.card{
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    padding: 0!important;
+
+    .loader-text{
+        font-family: "DM Sans", serif;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        color: #949796;
+        padding: 80px 10px!important;
+    }
+
+    .premium-tag-container{
+        display: flex;
+        background: black;
+        color: white;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        img{
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+        @media only screen and (max-width: 767px) {
+            transform: scale(0.75);
+        }
+    }
+    .feed-conetnt {
+        p{
+            margin-bottom: 0;
+        }
+        p.username{
+            font-family: "DM Sans", serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        p.shopName{
+            font-family: "DM Sans", serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A66C2;
+            cursor: pointer;
+        }
+        p.dot{
+            font-family: "DM Sans", serif;
+            font-size: 16px;
+            font-weight: 800;
+            color: #949796;
+            margin: 0 5px;
+        }
+        p.date{
+            font-family: "DM Sans", serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #949796;
+        }
+        .user-image {
+            width: 44px;
+            height: 44px;
+            border-radius: 22px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        text-align: left;
+        padding: 24px;
+
+        .feed-text-content{
+            font-family: "DM Sans", serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            padding: 12px;
+        }
+    }
+
+    .grid-container{
+        margin: 0;
+        padding: 0;
+
+        div.border{
+            border: none;
+            border-radius: 0;
+
+        }
+
+        @media only screen and (min-width: 767px) {
+            .height-one{
+                padding: 25%;
+
+            }
+            .height-two{
+                padding: 15%;
+            }
+        }
+    }
+
+    .spacer{
+        width: 95%;
+        height: 1px;
+        background: #E9EAEA;
+        margin: auto;
+    }
+    .post-interactions{
+        color: #737877;
+        font-family: "DM Sans", serif;
+        font-size: 14px;
+        padding: 0 15px;
+        .likes, .comments{
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 0 4px;
+        }
+
+    }
+    .controllers{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        height: 40px;
+        font-family: "DM Sans", serif;
+        font-size: 14px;
+
+        .like-button, .comment-button{
+            position: relative;
+            transition: all 0.2s ease;
+            &:active {
+                transform: scale(0.96);
+            }
+
+
+        }
+
+
+
+        .like-button:hover, .comment-button:hover{
+            color: #0A66C2;
+            cursor: pointer;
+        }
+        .didLike {
+            color: #0A66C2;
+        }
+    }
+
+    .post-seen{
+        width: 15px;
+        height: 15px;
+        margin-top: 3px;
+    }
+}
+
