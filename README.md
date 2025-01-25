@@ -2,7 +2,7 @@
 
 # Tedooo Feed - Home Assignment
 
-This project implements a feed UI for the Tedooo platform using **React**, bootstrapped with **Vite** for a fast and
+This project implements a feed UI for the Tedooo platform using **React** and **TypeScript**, bootstrapped with **Vite** for a fast and
 modern development experience. The application adheres to the provided design specifications and functionality
 requirements, as outlined in the Figma design.
 
@@ -59,11 +59,12 @@ requirements, as outlined in the Figma design.
 
 ```
 src/
+├── app/             # Redux slices and state management
 ├── assets/          # Static assets like images and fonts
 ├── components/      # Reusable UI components (e.g., FeedItem, LoadingBar)
+├── types/           # Common TypeScript declartion
 ├── App.tsx          # Root component
 ├── index.jsx        # Entry point
-app/                 # Redux slices and state management
 public/              # Static public files
 ```
 
