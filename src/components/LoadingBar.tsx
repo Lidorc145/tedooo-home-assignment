@@ -11,7 +11,7 @@ const LoadingBar:FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight;
+            const scrollPosition = window.scrollY + window.innerHeight +80; //80px bottom margin
             const documentHeight = document.documentElement.scrollHeight;
             if (scrollPosition >= documentHeight && hasMore && status !== 'loading') {
                 dispatch(fetchPosts(loadedCount) as never);
