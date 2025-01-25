@@ -1,4 +1,5 @@
 import {SerializedError} from "@reduxjs/toolkit";
+import * as React from "react";
 
 export interface Post {
     id: string;
@@ -35,7 +36,7 @@ export interface FetchPostsResponse {
 
 export interface MenuItem {
     title: string;
-    icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    icon: React.FC<React.SVGProps<SVGSVGElement>>;
     link: string;
     isSelected?: boolean;
 }
