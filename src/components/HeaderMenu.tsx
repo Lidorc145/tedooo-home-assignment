@@ -6,9 +6,9 @@ import {MenuItem} from "../types/common.tsx";
 import {FC} from "react";
 
 const menu: MenuItem[] = [
-    { title: "Home", icon: iconHome, link: "1", isSelected: true },
-    { title: "Messaging", icon: iconMessaging, link: "1" },
-    { title: "Notifications", icon: iconNotifications, link: "1" },
+    { title: "Home", icon: iconHome, link: "", isSelected: true },
+    { title: "Messaging", icon: iconMessaging, link: "" },
+    { title: "Notifications", icon: iconNotifications, link: "" },
 ];
 
 export const HeaderMenu:FC = () => (
