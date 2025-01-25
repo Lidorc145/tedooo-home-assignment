@@ -1,23 +1,25 @@
 import FbImageLibrary from "react-fb-image-grid";
 import GreenLikeIcon from "../assets/icon_greenlike.svg?react";
 import {format, formatDistance} from "date-fns";
-import {impression, toggleLike} from "../../app/postsReducer.js";
+import {impression, toggleLike} from "../app/postsReducer.js";
 import {useDispatch} from "react-redux";
 import {motion} from "motion/react"
 import IconEye from '../assets/icon_eye.svg?react';
 import IconCommentButton from '../assets/icon_comment_button.svg?react';
 import IconLikeButton from '../assets/icon_like_button.svg?react';
+import {Post} from "../types/common.tsx";
+import {FC} from "react";
 
-export const PostCard = (item, key) => {
+export const PostCard:FC<Post> = (item) => {
     const dispatch = useDispatch();
     return (
-        <motion.div key={key} initial={{opacity: 0, y: 100}}
+        <motion.div initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 1, delay: 0.5, ease: 'easeOut',}}>
             <div className="post-card max-w-[1024px] mt-4 mx-auto card"
                  onMouseOver={() => dispatch(impression({id: item.id}))}>
                 <div className="feed-conetnt">
-                    <PostHeader item={item}/>
+                    <PostHeader {...item}/>
                     <div className="feed-text-content">
                         {item.text}
                     </div>
@@ -34,7 +36,7 @@ export const PostCard = (item, key) => {
                 </div>
                 <div className="spacer"></div>
                 <div className="controllers">
-                    <LikeButton item={item}/>
+                    <LikeButton {...item}/>
                     <CommentButton/>
                 </div>
             </div>
@@ -42,7 +44,7 @@ export const PostCard = (item, key) => {
     );
 }
 
-const PostHeader = ({item}) => <div className={'flex relative'}>
+const PostHeader:FC<Post> = (item) => <div className={'flex relative'}>
     {item.premium && <ProTag/>}
     <img className="user-image" src={item.avatar} alt="user avatar"/>
     <div className={'flex flex-col'}>
@@ -58,10 +60,10 @@ const PostHeader = ({item}) => <div className={'flex relative'}>
     </div>
 </div>;
 
-const CommentButton = () => <div className="comment-button flex justify-center items-center content-center">
+const CommentButton:FC = () => <div className="comment-button flex justify-center items-center content-center">
     <IconCommentButton className='mr-2'/>Comment</div>;
 
-const ProTag = () => (
+const ProTag:FC = () => (
     <div className="premium-tag-container medium">
         <div className="image-wrapper icon">
             <img alt=""
@@ -71,7 +73,7 @@ const ProTag = () => (
     </div>
 );
 
-const LikeButton = ({item}) => {
+const LikeButton:FC<Post> = (item) => {
     const dispatch = useDispatch();
     const onLikeClicked = () => dispatch(toggleLike({id: item.id}));
     return (
@@ -84,11 +86,11 @@ const LikeButton = ({item}) => {
 };
 
 
-function formatTime(date) {
+function formatTime(date:string | Date): string {
     const now = new Date();
     const difference = formatDistance(new Date(date), now, {addSuffix: true});
 
-    if (new Date() - new Date(date) > 365 * 24 * 60 * 60 * 1000) {
+    if (new Date().getTime() - new Date(date).getTime() > 365 * 24 * 60 * 60 * 1000) {
         return format(new Date(date), 'dd/MM/yyyy');
     }
 

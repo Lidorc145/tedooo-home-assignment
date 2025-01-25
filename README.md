@@ -61,7 +61,7 @@ requirements, as outlined in the Figma design.
 src/
 ├── assets/          # Static assets like images and fonts
 ├── components/      # Reusable UI components (e.g., FeedItem, LoadingBar)
-├── App.jsx          # Root component
+├── App.tsx          # Root component
 ├── index.jsx        # Entry point
 app/                 # Redux slices and state management
 public/              # Static public files

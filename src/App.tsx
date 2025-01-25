@@ -6,7 +6,7 @@ function App() {
         <>
             <Header/>
             <div className="mt-4 mb-20">
-                <PostsGrid />
+                <PostsGrid/>
             </div>
         </>
     )
